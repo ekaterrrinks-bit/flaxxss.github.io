@@ -1,0 +1,75 @@
+# flaxxss.<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Новым Годом!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: radial-gradient(circle, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+
+        h1 { font-size: 3rem; margin-bottom: 20px; }
+        p { font-size: 1.5rem; line-height: 1.6; }
+
+        /* Эффект снега */
+        .snowflake {
+            position: fixed;
+            top: -10%;
+            color: white;
+            user-select: none;
+            z-index: 1;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(110vh); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>С Новым Годом, [Имя подруги]! 🎄</h1>
+        <p>Пусть этот год будет полон ярких моментов,< <br>
+        улыбок и исполнения всех твоих желаний!<br>
+        Ты — замечательный человек, и я рад(а), что мы дружим.</p>
+        <p>✨ 2026 будет легендарным! ✨</p>
+    </div>
+
+    <script>
+        function createSnowflake() {
+            const flake = document.createElement('div');
+            flake.classList.add('snowflake');
+            flake.innerText = '❄';
+            flake.style.left = Math.random() * 100 + 'vw';
+            flake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            flake.style.opacity = Math.random();
+            flake.style.fontSize = Math.random() * 20 + 10 + 'px';
+            
+            document.body.appendChild(flake);
+            
+            setTimeout(() => { flake.remove(); }, 5000);
+        }
+        setInterval(createSnowflake, 100);
+    </script>
+</body>
+</html>github.io
